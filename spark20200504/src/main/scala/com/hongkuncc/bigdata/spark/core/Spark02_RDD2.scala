@@ -6,7 +6,7 @@ import org.apache.spark.rdd.RDD
 object Spark02_RDD2 {
   def main(args: Array[String]): Unit = {
     // 1. 创建 SparkConf对象
-    val sparkConf = new SparkConf().setAppName("Spark02_RDD1").setMaster("local[*]")
+    val sparkConf = new SparkConf().setAppName("Spark02_RDD2").setMaster("local[*]")
     // 2. 创建Spark环境连接对象
     val sc = new SparkContext(sparkConf)
 
