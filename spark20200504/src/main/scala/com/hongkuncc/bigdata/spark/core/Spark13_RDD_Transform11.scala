@@ -1,6 +1,7 @@
 package com.hongkuncc.bigdata.spark.core
 
-import org.apache.spark.{SparkConf, SparkContext}
+
+import org.apache.spark.{Partitioner, SparkConf, SparkContext}
 import org.apache.spark.rdd.RDD
 
 object Spark13_RDD_Transform11 {
@@ -15,10 +16,23 @@ object Spark13_RDD_Transform11 {
 
     //使用分区器将数据重新分区
     //spark默认会提供HashPartitioner
-    rdd.partitionBy()
+    rdd partitionBy()
 
     //释放连接
     sc.stop()
   }
 
+}
+
+//自定义分区器
+//1.继承Partitioner
+class MyPartitioner extends Partitioner{
+  override def numPartitions: Int = {
+    partitions
+
+  }
+
+  override def getPartition(key: Any): Int = {
+
+  }
 }
