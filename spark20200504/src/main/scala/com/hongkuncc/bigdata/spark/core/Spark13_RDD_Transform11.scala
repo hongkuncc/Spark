@@ -14,9 +14,11 @@ object Spark13_RDD_Transform11 {
     // 3. 构建RDD
     val rdd = sc.makeRDD(List(("a",1),("b",2),("c",3)),3)
 
+    println(rdd.glom().collect().mkString(","))
+
     //使用分区器将数据重新分区
     //spark默认会提供HashPartitioner
-    rdd partitionBy()
+    val rdd1: RDD[(String, Int)] = rdd partitionBy(new MyPartitioner(3))
 
     //释放连接
     sc.stop()
@@ -26,13 +28,11 @@ object Spark13_RDD_Transform11 {
 
 //自定义分区器
 //1.继承Partitioner
-class MyPartitioner extends Partitioner{
+class MyPartitioner(partitions:Int) extends Partitioner{
   override def numPartitions: Int = {
     partitions
 
   }
 
-  override def getPartition(key: Any): Int = {
-
-  }
+  override def getPartition(key: Any): Int = 1
 }
