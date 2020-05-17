@@ -1,3 +1,4 @@
+/*
 package com.hongkuncc.bigdata.spark.core
 
 
@@ -42,3 +43,4 @@ class MyPartitioner(partitions:Int) extends Partitioner{
 
   override def getPartition(key: Any): Int = 1
 }
+*/

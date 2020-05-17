@@ -14,7 +14,7 @@ object Spark18_RDD_Transform16 {
     // 3. 构建RDD
     val rdd = sc.makeRDD(List(("a",3),("a",2),("c",4),("b",3),("c",6),("c",8)),2)
 
-    //foldRDD
+    //foldByKey
     val foldRDD: RDD[(String, Int)] = rdd.foldByKey(0)(_+_)
 
     println(foldRDD.collect().mkString(","))
