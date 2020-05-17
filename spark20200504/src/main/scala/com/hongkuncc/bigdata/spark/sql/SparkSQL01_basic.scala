@@ -1,5 +1,4 @@
 package com.hongkuncc.bigdata.spark.sql
-import org.apache.spark
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}
 import org.apache.spark.{SparkConf, SparkContext}
@@ -17,10 +16,16 @@ object SparkSQL01_basic {
     val df:DataFrame = spark.read.json( "input/user.json")
     // 打印信息
     //df.show()
-
+    /*
+        val users: Seq[User] = Seq( User(1,"zhangsan",30), User(2, "lisi", 40) )
+        val ds: Dataset[User] = users.toDS
+        ds.show
+         */
     val rdd: RDD[(Int, String, Int)] = spark.sparkContext.makeRDD(List((1, "zhangsan", 30)))
+
     // RDD -> DF
     val df1: DataFrame = rdd.toDF("id", "name", "age")
+
     // DF -> RDD
     val rdd1: RDD[Row] = df1.rdd
 
