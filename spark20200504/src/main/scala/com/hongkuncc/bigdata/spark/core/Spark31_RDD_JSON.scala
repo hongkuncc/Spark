@@ -11,7 +11,7 @@ object Spark31_RDD_JSON {
 
     // TODO 2. 创建Spark环境连接对象
     val sc = new SparkContext(sparkConf)
-    import scala.util.parsing.json.JSON
+
     val stringRDD: RDD[String] = sc.textFile("input/user.json")
 
     // Spark读取JSON文件，是按照每一行解析的，所以要求，每一行的数据为JSON字符串。
