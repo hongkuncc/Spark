@@ -3,6 +3,8 @@ package com.hongkuncc.bigdata.spark.core
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
+import scala.util.parsing.json.JSON
+
 object Spark31_RDD_JSON {
   def main(args: Array[String]): Unit = {
 
