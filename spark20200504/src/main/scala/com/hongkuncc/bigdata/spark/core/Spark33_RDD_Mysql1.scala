@@ -16,7 +16,7 @@ object Spark33_RDD_Mysql1 {
 
     // TODO 3. 向Mysql中写入数据
     val driver = "com.mysql.jdbc.Driver"
-    val url = "jdbc:mysql://linux1:3306/rdd"
+    val url = "jdbc:mysql://hduser102:3306/rdd"
     val userName = "root"
     val passWd = "000000"
 
