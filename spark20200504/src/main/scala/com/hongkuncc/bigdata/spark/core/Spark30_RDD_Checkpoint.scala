@@ -22,7 +22,7 @@ object Spark30_RDD_Checkpoint {
     rdd2.checkpoint()
     println(rdd2.toDebugString)
     println("***********************")
-    // 检查点执行的时候，会在正常逻辑执行完成后，在从头 执行一次。
+    // 检查点执行的时候，会在正常逻辑执行完成后，再从头 执行一次。
     rdd2.collect().foreach(println)
     rdd2.collect().foreach(println)
     rdd2.collect().foreach(println)
