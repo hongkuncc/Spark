@@ -1,5 +1,7 @@
 package com.hongkuncc.realtime.app
 
+import com.hongkuncc.mock.util.RedisUtil
+import com.hongkuncc.realtime.bean.AdsInfo
 import org.apache.spark.SparkContext
 import org.apache.spark.streaming.dstream.DStream
 import redis.clients.jedis.Jedis
