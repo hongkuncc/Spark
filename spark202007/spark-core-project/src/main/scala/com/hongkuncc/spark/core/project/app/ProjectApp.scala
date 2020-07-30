@@ -14,7 +14,7 @@ object ProjectApp {
         val sc: SparkContext = new SparkContext(conf)
         
         // 把数据从文件读出来
-        val sourceRDD = sc.textFile("c:/user_visit_action.txt")
+        val sourceRDD = sc.textFile("C:\\Users\\hongk\\Desktop\\Spark\\spark202007\\db\\data\\spark-core")
         // 把数据封装好(封装到样例类中)
         val userVisitActionRDD: RDD[UserVisitAction] = sourceRDD.map(line => {
             val fields = line.split("_")
