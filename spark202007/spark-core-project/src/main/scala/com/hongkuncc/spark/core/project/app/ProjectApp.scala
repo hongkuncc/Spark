@@ -33,7 +33,7 @@ object ProjectApp {
                 fields(11),
                 fields(12).toLong)
         })
-        //
+//        userVisitActionRDD.collect.foreach(println)
         
         // 需求1:
 //        val categoryTop10 = CategoryTopApp.calcCategoryTop10(sc, userVisitActionRDD)
