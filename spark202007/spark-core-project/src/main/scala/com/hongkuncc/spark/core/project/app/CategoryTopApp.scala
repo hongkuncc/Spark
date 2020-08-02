@@ -18,6 +18,10 @@ object CategoryTopApp {
         val acc = new CategoryAcc
         sc.register(acc)
         userVisitActionRDD.foreach(action => acc.add(action))
+
+        //打印结果
+//        acc.value.foreach(println)
+
         // 1. 把一个品类的三个指标封装到一个map中
         val cidActionCountGrouped: Map[String, mutable.Map[(String, String), Long]] = acc.value.groupBy(_._1._1)
         // 2. 把结果封装到样例类中
@@ -34,7 +38,7 @@ object CategoryTopApp {
             .sortBy(info => (-info.clickCount, -info.orderCount, -info.payCount))
             .take(10)
         
-//        result.foreach(println)
+        result.foreach(println)
         // 4. 返回top10品类
         result
         // 4.写到jdbc中 TODO
