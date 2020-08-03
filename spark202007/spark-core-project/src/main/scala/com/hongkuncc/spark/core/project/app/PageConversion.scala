@@ -29,7 +29,9 @@ object PageConversion {
             .filter(action => prePages.contains(action.page_id.toString))
             .map(action => (action.page_id, 1))
             .countByKey()
-        // 3. 计算分子
+
+        println(pageAndCount)
+/*        // 3. 计算分子
         // 3.1 按照sessionId分组. 不能先对需要的页面做过滤, 否则会应用调整的逻辑
         val sessionIdGrouped: RDD[(String, Iterable[UserVisitAction])] = userVisitActionRDD.groupBy(_.session_id)
         val pageFlowsRDD = sessionIdGrouped.flatMap {
@@ -55,7 +57,7 @@ object PageConversion {
                 (flow, f.format(rate))
     
         }
-        println(result)
+        println(result)*/
     }
 }
 
