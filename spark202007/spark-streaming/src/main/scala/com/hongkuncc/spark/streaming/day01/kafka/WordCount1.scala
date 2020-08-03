@@ -15,7 +15,7 @@ object WordCount1 {
         val ssc = new StreamingContext(conf, Seconds(3))
         
         val params = Map[String, String](
-            "bootstrap.servers" -> "hadoop102:9092,hadoop103:9092,hadoop104:9092",
+            "bootstrap.servers" -> "hduser102:9092,hduser103:9092,hduser104:9092",
             "group.id" -> "1015")
         KafkaUtils
             .createDirectStream[String, String, StringDecoder, StringDecoder](
