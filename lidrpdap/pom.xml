@@ -152,7 +152,7 @@
       </plugin>
       <plugin>
         <groupId>net.alchim31.maven</groupId>
-        <artifactId>scala-maven-plugin</artifactId>
+        <artifactId>scala-maven-plugin</artifactId><!--为了满足scala和java混编-->
         <version>3.2.2</version>
         <executions>
           <execution>
