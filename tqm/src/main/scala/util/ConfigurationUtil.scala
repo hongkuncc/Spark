@@ -7,7 +7,7 @@ import org.apache.commons.configuration2.{FileBasedConfiguration, PropertiesConf
 import scala.collection.mutable
 
 /**
-  * 用来读取配置文件的工具类1
+  * 用来读取配置文件的工具类
   */
 object ConfigurationUtil {
   // 这个 map 用来存储配置文件名和在这个文件内定义的配置
