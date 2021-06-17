@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JobConf>
+    <setDataBase>
+        sx_dm_pos_safe
+    </setDataBase>
+
+    <selectColumn>
+        select * from table where
+    </selectColumn>
+
+</JobConf>
