@@ -1,5 +1,7 @@
 package common;
 
+import com.mongodb.spark.MongoSpark;
+import com.mongodb.spark.config.WriteConfig;
 import entity.Hive2MongoConfigInfo;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.Dataset;
@@ -38,7 +40,19 @@ public class Hive2Mongo {
         writeOverWrite.put("collection",mongoTargetCollection);
         writeOverWrite.put("replacement",replaceDocument);
         writeOverWrite.put("ordered","false");
+        WriteConfig writeConfig = WriteConfig.create(jsc).withOptions(writeOverWrite);
 
+        log.info("==========导入" + mongoTargetCollection + "开始");
+        MongoSpark.save(executeSqlDataFrame,writeConfig);
+        log.info("==========导入" + mongoTargetCollection + "结束");
+
+    }
+
+    public static void hive2Mongo(Hive2MongoConfigInfo hive2MongoConfig,String executeSql,String mongoTargetCollection ) {
+        hive2Mongo(hive2MongoConfig,executeSql,mongoTargetCollection,"true");
+    }
+    public static void hive2MongoFalse(Hive2MongoConfigInfo hive2MongoConfig,String executeSql,String mongoTargetCollection ) {
+        hive2Mongo(hive2MongoConfig,executeSql,mongoTargetCollection,"false");
     }
 
 }
