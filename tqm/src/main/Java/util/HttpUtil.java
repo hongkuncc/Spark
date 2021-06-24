@@ -73,7 +73,8 @@ public class HttpUtil {
         post.setEntity((HttpEntity) entity);
 
         //设置请求的报文头部的编码
-        post.setHeader(new BasicHeader("Content-Type","application/json;charset=UTF-8"));
+        post.setHeader(new BasicHeader("Content-Type",
+                "application/json;charset=UTF-8"));
         //设置期望客户端返回的编码
         post.setHeader(new BasicHeader("Accept","application/json;charset=UTF-8"));
         //执行post请求
