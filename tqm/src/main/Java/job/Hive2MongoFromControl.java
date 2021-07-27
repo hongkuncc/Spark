@@ -1,3 +1,4 @@
+/*
 package job;
 
 import common.DynamicSql;
@@ -18,13 +19,15 @@ import java.util.Map;
 
 import static constant.ShellParameterConstant.GROUP;
 
+*/
 /**
  * @ClassName: Hive2Mongo
  * @Description: 解析xml写入
  * @Author: hongkuncc
  * @Date 2021/6/21 16:06
  * @Version 1.0
- */
+ *//*
+
 public class Hive2MongoFromControl extends InitSparkSession {
     private static final Logger log = LoggerFactory.getLogger(Hive2MongoFromControl.class);
 
@@ -52,7 +55,8 @@ public class Hive2MongoFromControl extends InitSparkSession {
         sparkSession.stop();
     }
 
-    /*
+    */
+/*
      * @Author hongkuncc
      * @Description 根据指定表导入mongo
      * @Date  2021/6/23 17:32
@@ -60,7 +64,8 @@ public class Hive2MongoFromControl extends InitSparkSession {
      * @Param
      * @Return
      * @MethodName
-     */
+     *//*
+
     public static void hive2Mongo(JavaSparkContext jsc, Map<String,String> xmlMap, Hive2MongoConfigInfo hive2MongoConfigInfo,List<DynamicSqlCondition> dynamicSqlConditionList,String sourceTabel,String runMode,String outputTable,String limitTag) {
         if (!StringUtils.equals(sourceTabel,"frey_pol_ben")) {
             String selectPolben = xmlMap.get("selectPolBne");
@@ -116,3 +121,4 @@ public class Hive2MongoFromControl extends InitSparkSession {
         return resultTableMap;
     }
 }
+*/
