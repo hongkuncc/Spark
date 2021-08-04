@@ -9,10 +9,15 @@ import org.apache.spark.{SparkConf, SparkContext}
  */
 object Practice {
     def main(args: Array[String]): Unit = {
-        val conf: SparkConf = new SparkConf().setAppName("Practice").setMaster("local[2]")
+        val conf: SparkConf = new SparkConf().setAppName("Practice").setMaster("local")
         val sc: SparkContext = new SparkContext(conf)
-        
-        // RDD[点击记录]  map
+
+        val x= sc.parallelize(Array(1,2,3));
+        val y= x.map(n=>n*n);
+        val z= y.zip(x);
+        println(z.collect().mkString(", ")) ;
+
+/*        // RDD[点击记录]  map
         val lineRDD = sc.textFile("C:\\Users\\hongk\\Desktop\\Spark\\spark202007\\db\\data\\agent.log")
         //  RDD[(省份, 广告), 1]    reduceByKey
         val provinceAdsOne = lineRDD.map(line => {
@@ -37,7 +42,7 @@ object Practice {
 //        val r = result.sortByKey()
         // 考虑把key变成Int之后再排序
         val r = result.sortBy(_._1.toInt)
-        r.collect.foreach(println)
+        r.collect.foreach(println)*/
         sc.stop()
         
     }
