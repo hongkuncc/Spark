@@ -4,7 +4,7 @@
   <artifactId>lidrp-dap</artifactId>
   <version>1.0.0</version>
   <properties>
-    <scala.version>2.11.8</scala.version>
+    <scala.version>2.13.4</scala.version>
     <spark.version>2.2.1</spark.version>
     <hadoop.version>2.7.4</hadoop.version>
     <log4j.version>2.12.1</log4j.version>
