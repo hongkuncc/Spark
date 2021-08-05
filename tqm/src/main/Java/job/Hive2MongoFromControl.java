@@ -1,4 +1,3 @@
-/*
 package job;
 
 import common.DynamicSql;
@@ -19,22 +18,21 @@ import java.util.Map;
 
 import static constant.ShellParameterConstant.GROUP;
 
-*/
 /**
  * @ClassName: Hive2Mongo
  * @Description: 解析xml写入
  * @Author: hongkuncc
  * @Date 2021/6/21 16:06
  * @Version 1.0
- *//*
+ */
 
 public class Hive2MongoFromControl extends InitSparkSession {
     private static final Logger log = LoggerFactory.getLogger(Hive2MongoFromControl.class);
 
 
-    String isGroup = args[0];
-    String isPartition = args[1];
     public static void main(String[] args) {
+        String isGroup = args[0];
+        String isPartition = args[1];
         SparkSession sparkSession = new InitSparkSession().getSparkSession("Hive2Mongo4ChannelControl",Hive2MongoFromControl.class,Boolean.TRUE);
         JavaSparkContext jsc = new JavaSparkContext(sparkSession.sparkContext());
         Map<String,String> xmlMap = new XMLUtil().loadJobXml("/xml/SQL.xml");
@@ -54,8 +52,6 @@ public class Hive2MongoFromControl extends InitSparkSession {
         jsc.close();
         sparkSession.stop();
     }
-
-    */
 /*
      * @Author hongkuncc
      * @Description 根据指定表导入mongo
@@ -64,7 +60,7 @@ public class Hive2MongoFromControl extends InitSparkSession {
      * @Param
      * @Return
      * @MethodName
-     *//*
+     */
 
     public static void hive2Mongo(JavaSparkContext jsc, Map<String,String> xmlMap, Hive2MongoConfigInfo hive2MongoConfigInfo,List<DynamicSqlCondition> dynamicSqlConditionList,String sourceTabel,String runMode,String outputTable,String limitTag) {
         if (!StringUtils.equals(sourceTabel,"frey_pol_ben")) {
@@ -121,4 +117,3 @@ public class Hive2MongoFromControl extends InitSparkSession {
         return resultTableMap;
     }
 }
-*/
